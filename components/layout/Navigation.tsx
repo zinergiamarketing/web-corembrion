@@ -64,7 +64,7 @@ export function Navigation({ variant = "dark" }: NavigationProps) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="lg:hidden fixed top-20 right-0 bottom-0 w-full max-w-sm z-[101] bg-[#1a4792] shadow-2xl flex flex-col pt-6 pb-8 px-6 overflow-y-auto"
+              className="lg:hidden fixed top-20 right-0 bottom-0 w-full max-w-[280px] z-[101] bg-[#1a4792] shadow-2xl flex flex-col pt-6 pb-8 px-5 overflow-y-auto"
             >
               <nav className="flex flex-col gap-2" aria-label="Navegación principal">
                 {navLinks.map((link) => (
