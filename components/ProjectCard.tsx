@@ -30,7 +30,7 @@ export function ProjectCard({ proyecto, index }: ProjectCardProps) {
         <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
           <div className="relative aspect-video bg-gray-200 overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80"
+              src={proyecto.imagen || "/images/proyectos/proyecto-1.jpeg"}
               alt={proyecto.titulo}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"

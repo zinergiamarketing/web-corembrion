@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -21,9 +22,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-[#1a4792] flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
-              </div>
+              <Image
+                src="/logos/logo.png"
+                alt="Logo Corembrion"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
               <span className="font-bold text-xl">Corembrion</span>
             </Link>
             <p className="text-gray-300 text-sm">

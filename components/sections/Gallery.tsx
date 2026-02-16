@@ -6,12 +6,9 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 
 const galleryItems = [
-  { id: 1, src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80", category: "Proyectos", alt: "Proyecto piscícola" },
-  { id: 2, src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", category: "Comunidades", alt: "Comunidad local" },
-  { id: 3, src: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80", category: "Capacitaciones", alt: "Capacitación" },
-  { id: 4, src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80", category: "Naturaleza", alt: "Paisaje natural" },
-  { id: 5, src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80", category: "Proyectos", alt: "Agricultura" },
-  { id: 6, src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80", category: "Naturaleza", alt: "Ciénaga" },
+  { id: 1, src: "/images/proyectos/proyecto-1.jpeg", category: "Proyectos", alt: "Proyecto Corembrion" },
+  { id: 2, src: "/images/nosotros/nosotros-1.jpeg", category: "Comunidades", alt: "Comunidad de la región del San Jorge" },
+  { id: 3, src: "/images/hero/hero-1.jpeg", category: "Naturaleza", alt: "Región del San Jorge" },
 ];
 
 const categories = ["Todos", "Proyectos", "Comunidades", "Capacitaciones", "Naturaleza"];

@@ -66,17 +66,12 @@ export function AboutUs() {
           className="mt-16 rounded-xl overflow-hidden aspect-video bg-gray-200 relative"
         >
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80"
+            src="/images/nosotros/nosotros-1.jpeg"
             alt="Comunidades de la región del San Jorge"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 1200px"
           />
-          <div className="absolute inset-0 bg-[#1a4792]/30 flex items-center justify-center">
-            <p className="text-white text-lg font-medium text-center px-4">
-              Espacio para imagen del cliente: comunidades, campo, pescadores
-            </p>
-          </div>
         </motion.div>
       </Container>
     </section>

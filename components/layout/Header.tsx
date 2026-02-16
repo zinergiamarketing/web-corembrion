@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -30,9 +31,13 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2" aria-label="Corembrion - Inicio">
-            <div className="w-12 h-12 rounded-lg bg-[#1a4792] flex items-center justify-center">
-              <span className="text-white font-bold text-xl">C</span>
-            </div>
+            <Image
+              src="/logos/logo.png"
+              alt="Logo Corembrion"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
             <span className={`font-bold text-xl ${useLightNav ? "text-white" : "text-[#1a1a1a]"}`}>
               Corembrion
             </span>

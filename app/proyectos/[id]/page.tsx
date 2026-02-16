@@ -50,7 +50,7 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
         <article>
           <div className="relative h-64 sm:h-96 bg-gray-200">
             <Image
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80"
+              src={proyecto.imagen || "/images/proyectos/proyecto-1.jpeg"}
               alt={proyecto.titulo}
               fill
               className="object-cover"

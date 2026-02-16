@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80"
+          src="/images/hero/hero-1.jpeg"
           alt="Comunidad y naturaleza en la región del San Jorge"
           fill
           className="object-cover"
