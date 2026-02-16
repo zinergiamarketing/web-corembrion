@@ -64,15 +64,8 @@ export function Navigation({ variant = "dark" }: NavigationProps) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="lg:hidden fixed top-0 right-0 bottom-0 w-full max-w-sm z-[101] bg-[#1a4792] shadow-2xl flex flex-col pt-20 pb-8 px-6 overflow-y-auto relative"
+              className="lg:hidden fixed top-20 right-0 bottom-0 w-full max-w-sm z-[101] bg-[#1a4792] shadow-2xl flex flex-col pt-6 pb-8 px-6 overflow-y-auto"
             >
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 p-2 rounded-lg text-white hover:bg-white/20 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label="Cerrar menú"
-              >
-                <X className="w-6 h-6" strokeWidth={2} />
-              </button>
               <nav className="flex flex-col gap-2" aria-label="Navegación principal">
                 {navLinks.map((link) => (
                   <Link
