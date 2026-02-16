@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -21,57 +22,78 @@ export function Navigation({ variant = "dark" }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const isLight = variant === "light";
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-6 right-4 z-50 p-2 rounded-lg bg-white/90 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#1a4792] min-h-[44px] min-w-[44px]"
+        className="lg:hidden flex items-center justify-center p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a4792] focus:ring-offset-2 min-h-[44px] min-w-[44px] -mr-2"
         aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={isOpen}
       >
-        <svg
-          className="w-6 h-6 text-[#1a4792]"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          {isOpen ? (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
+        {isOpen ? (
+          <X className={cn("w-6 h-6", isLight ? "text-white" : "text-[#1a4792]")} strokeWidth={2} />
+        ) : (
+          <Menu className={cn("w-6 h-6", isLight ? "text-white" : "text-[#1a4792]")} strokeWidth={2} />
+        )}
       </button>
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 z-40 bg-[#1a4792] pt-24 pb-8 px-6"
-          >
-            <nav className="flex flex-col gap-6" aria-label="Navegación principal">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-white text-xl font-medium hover:text-[#9cc0dd] transition-colors py-2"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                href="/contacto"
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 z-[100] bg-black/50"
+              onClick={() => setIsOpen(false)}
+              aria-hidden="true"
+            />
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="lg:hidden fixed top-0 right-0 bottom-0 w-full max-w-sm z-[101] bg-[#1a4792] shadow-2xl flex flex-col pt-20 pb-8 px-6 overflow-y-auto relative"
+            >
+              <button
                 onClick={() => setIsOpen(false)}
-                className="mt-4 inline-flex justify-center bg-white text-[#1a4792] px-6 py-3 rounded-lg font-semibold hover:bg-[#9cc0dd] transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-lg text-white hover:bg-white/20 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                aria-label="Cerrar menú"
               >
-                Contáctanos
-              </Link>
-            </nav>
-          </motion.div>
+                <X className="w-6 h-6" strokeWidth={2} />
+              </button>
+              <nav className="flex flex-col gap-2" aria-label="Navegación principal">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-white text-lg font-medium hover:text-[#9cc0dd] transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/contacto"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-6 inline-flex justify-center bg-white text-[#1a4792] px-6 py-3 rounded-lg font-semibold hover:bg-[#9cc0dd] transition-colors"
+                >
+                  Contáctanos
+                </Link>
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 

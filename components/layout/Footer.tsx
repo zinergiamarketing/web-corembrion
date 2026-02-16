@@ -29,7 +29,7 @@ export function Footer() {
                 height={40}
                 className="object-contain"
               />
-              <span className="font-bold text-xl">Corembrion</span>
+              <span className="font-bold text-xl uppercase tracking-wide">COREMBRION</span>
             </Link>
             <p className="text-gray-300 text-sm">
               Corporación para el Desarrollo Integral. Transformando comunidades en la región del San Jorge.
@@ -88,7 +88,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-          <p>© 2026 Corembrion - Corporación para el Desarrollo Integral. NIT: 830504939-5</p>
+          <p>© 2026 COREMBRION - Corporación para el Desarrollo Integral. NIT: 830504939-5</p>
         </div>
       </div>
     </footer>

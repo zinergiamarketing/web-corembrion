@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
+import { BookOpen, Sprout, Trees, ClipboardList } from "lucide-react";
 
 const areas = [
   {
     title: "Formación y Capacitación",
-    icon: "📚",
+    Icon: BookOpen,
     items: [
       "Organizaciones comunitarias",
       "Agremiaciones",
@@ -17,7 +18,7 @@ const areas = [
   },
   {
     title: "Desarrollo Productivo",
-    icon: "🌾",
+    Icon: Sprout,
     items: [
       "Acuicultura y piscicultura",
       "Agricultura (plátano hartón, hortofrutícolas)",
@@ -28,7 +29,7 @@ const areas = [
   },
   {
     title: "Turismo Sostenible",
-    icon: "🏞️",
+    Icon: Trees,
     items: [
       "Turismo deportivo y recreativo",
       "Ecoturismo",
@@ -39,7 +40,7 @@ const areas = [
   },
   {
     title: "Gestión de Proyectos",
-    icon: "📋",
+    Icon: ClipboardList,
     items: [
       "Planificación estratégica",
       "Investigación y desarrollo",
@@ -77,7 +78,9 @@ export function WorkAreas() {
               transition={{ delay: index * 0.1 }}
               className="bg-[#f5f5f5] rounded-xl p-6 hover:bg-[#9cc0dd]/20 transition-colors border border-transparent hover:border-[#1a4792]/20"
             >
-              <div className="text-3xl mb-4">{area.icon}</div>
+              <div className="mb-4">
+                <area.Icon className="w-10 h-10 text-[#1a4792]" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg font-bold text-[#1a4792] mb-4 font-heading">
                 {area.title}
               </h3>

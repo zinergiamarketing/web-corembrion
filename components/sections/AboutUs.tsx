@@ -3,21 +3,22 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import Image from "next/image";
+import { Target, Eye, Handshake } from "lucide-react";
 
 const items = [
   {
     title: "Misión",
-    icon: "🎯",
+    Icon: Target,
     content: "Integrar las diferentes fuerzas productivas de la región del San Jorge con todas las fuerzas vivas del país, en búsqueda de una transformación, reconstrucción y transformación del tejido social, con una sana convivencia racional y pacífica del hombre con el medio ambiente.",
   },
   {
     title: "Visión",
-    icon: "👁️",
+    Icon: Eye,
     content: "Ser la organización comunitaria más importante en la región en el año 2025, como eslabón en la cadena productiva y de servicios entre el sector primario y el consumidor final.",
   },
   {
     title: "Objeto Social",
-    icon: "🤝",
+    Icon: Handshake,
     content: "Integrar a los productores, empresarios comercializadores y la sociedad civil, en torno al mejoramiento de la calidad de vida de las comunidades de la región del San Jorge, departamento de Córdoba y del país en general.",
   },
 ];
@@ -50,7 +51,9 @@ export function AboutUs() {
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="text-4xl mb-4">{item.icon}</div>
+              <div className="mb-4">
+                <item.Icon className="w-12 h-12 text-[#1a4792]" strokeWidth={1.5} />
+              </div>
               <h3 className="text-xl font-bold text-[#1a4792] mb-4 font-heading">
                 {item.title}
               </h3>

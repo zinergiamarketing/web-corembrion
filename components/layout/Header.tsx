@@ -38,8 +38,8 @@ export function Header() {
               height={48}
               className="object-contain"
             />
-            <span className={`font-bold text-xl ${useLightNav ? "text-white" : "text-[#1a1a1a]"}`}>
-              Corembrion
+            <span className={`font-bold text-xl uppercase tracking-wide ${useLightNav ? "text-white" : "text-[#1a1a1a]"}`}>
+              COREMBRION
             </span>
           </Link>
           <Navigation variant={useLightNav ? "light" : "dark"} />
