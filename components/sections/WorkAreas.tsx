@@ -80,7 +80,7 @@ export function WorkAreas() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="bg-[#f5f5f5] rounded-xl p-5 h-full min-h-[280px] border border-transparent hover:border-[#1a4792]/20"
+                  className="bg-[#f5f5f5] rounded-xl p-5 h-full border border-transparent hover:border-[#1a4792]/20"
                 >
                   <div className="mb-3">
                     <area.Icon className="w-9 h-9 text-[#1a4792]" strokeWidth={1.5} />
@@ -89,24 +89,12 @@ export function WorkAreas() {
                     {area.title}
                   </h3>
                   <ul className="space-y-1.5">
-                    {area.items.length > 3 ? (
-                      area.items.slice(0, 3).map((item) => (
-                        <li key={item} className="text-gray-600 text-xs flex items-start gap-2">
-                          <span className="text-[#1a4792] mt-0.5">•</span>
-                          {item}
-                        </li>
-                      ))
-                    ) : (
-                      area.items.map((item) => (
-                        <li key={item} className="text-gray-600 text-xs flex items-start gap-2">
-                          <span className="text-[#1a4792] mt-0.5">•</span>
-                          {item}
-                        </li>
-                      ))
-                    )}
-                    {area.items.length > 3 && (
-                      <li className="text-[#1a4792] text-xs font-medium">+{area.items.length - 3} más</li>
-                    )}
+                    {area.items.map((item) => (
+                      <li key={item} className="text-gray-600 text-xs flex items-start gap-2">
+                        <span className="text-[#1a4792] mt-0.5 flex-shrink-0">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </motion.div>
               </CarouselItem>
