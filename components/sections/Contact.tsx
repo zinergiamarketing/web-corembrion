@@ -55,15 +55,16 @@ export function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-20 bg-[#f5f5f5]">
+    <section id="contacto" className="py-12 md:py-20 bg-[#f5f5f5]">
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-6 font-heading">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-4 md:mb-6 font-heading">
               Contacto
             </h2>
             <p className="text-gray-600 mb-8">
@@ -115,7 +116,8 @@ export function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl p-8 shadow-lg"
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-xl p-6 md:p-8 shadow-lg"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>

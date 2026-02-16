@@ -51,6 +51,11 @@ body {
   font-family: var(--font-montserrat), var(--font-inter), system-ui, sans-serif;
 }
 
+/* Ocultar scrollbar en carruseles móviles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Respetar preferencia de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

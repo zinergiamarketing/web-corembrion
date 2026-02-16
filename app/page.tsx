@@ -15,7 +15,7 @@ export default function Home() {
         Saltar al contenido principal
       </a>
       <Header />
-      <main id="main">
+      <main id="main" className="overflow-x-hidden">
         <Hero />
         <AboutUs />
         <WorkAreas />

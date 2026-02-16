@@ -57,33 +57,34 @@ export function Stats() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="py-20 bg-[#1a4792] text-white">
+    <section ref={ref} className="py-12 md:py-20 bg-[#1a4792] text-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-heading">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-3 md:mb-4 font-heading">
             Experiencia e Impacto
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto">
             Córdoba, Sucre, Bolívar y Magdalena
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <div className="text-4xl sm:text-5xl font-bold mb-2">
+              <div className="text-3xl sm:text-5xl font-bold mb-1 md:mb-2">
                 <AnimatedCounter
                   value={stat.value}
                   prefix={stat.prefix || ""}
@@ -92,7 +93,7 @@ export function Stats() {
                   inView={isInView}
                 />
               </div>
-              <p className="text-white/90">{stat.label}</p>
+              <p className="text-white/90 text-sm md:text-base">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -101,22 +102,38 @@ export function Stats() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-16 border-t border-white/20 pt-12"
+          transition={{ duration: 0.5 }}
+          className="mt-10 md:mt-16 border-t border-white/20 pt-8 md:pt-12"
         >
-          <h3 className="text-xl font-bold mb-6 text-center">Desarrollo Institucional</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 rounded-lg p-6">
+          <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-center">Desarrollo Institucional</h3>
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/10 rounded-lg p-4 md:p-6"
+            >
               <p className="font-semibold text-[#9cc0dd]">2004-2008</p>
-              <p className="mt-2">Siembra y repoblamiento Ciénaga de Ayapel + capacitaciones</p>
-            </div>
-            <div className="bg-white/10 rounded-lg p-6">
+              <p className="mt-2 text-sm md:text-base">Siembra y repoblamiento Ciénaga de Ayapel + capacitaciones</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/10 rounded-lg p-4 md:p-6"
+            >
               <p className="font-semibold text-[#9cc0dd]">2014-2019</p>
-              <p className="mt-2">Expansión proyectos piscícolas</p>
-            </div>
-            <div className="bg-white/10 rounded-lg p-6">
+              <p className="mt-2 text-sm md:text-base">Expansión proyectos piscícolas</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/10 rounded-lg p-4 md:p-6"
+            >
               <p className="font-semibold text-[#9cc0dd]">2020-2024</p>
-              <p className="mt-2">Mega proyectos agrícolas y acuicultura regional</p>
-            </div>
+              <p className="mt-2 text-sm md:text-base">Mega proyectos agrícolas y acuicultura regional</p>
+            </motion.div>
           </div>
         </motion.div>
       </Container>
