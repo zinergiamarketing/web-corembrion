@@ -1,0 +1,128 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { Container } from "@/components/ui/Container";
+
+const galleryItems = [
+  { id: 1, src: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80", category: "Proyectos", alt: "Proyecto piscícola" },
+  { id: 2, src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", category: "Comunidades", alt: "Comunidad local" },
+  { id: 3, src: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80", category: "Capacitaciones", alt: "Capacitación" },
+  { id: 4, src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80", category: "Naturaleza", alt: "Paisaje natural" },
+  { id: 5, src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80", category: "Proyectos", alt: "Agricultura" },
+  { id: 6, src: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80", category: "Naturaleza", alt: "Ciénaga" },
+];
+
+const categories = ["Todos", "Proyectos", "Comunidades", "Capacitaciones", "Naturaleza"];
+
+export function Gallery() {
+  const [activeCategory, setActiveCategory] = useState("Todos");
+  const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
+
+  const filteredItems = activeCategory === "Todos"
+    ? galleryItems
+    : galleryItems.filter((item) => item.category === activeCategory);
+
+  return (
+    <section id="galeria" className="py-20 bg-white">
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4 font-heading">
+            Galería de Imágenes
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Nuestro trabajo en la región del San Jorge
+          </p>
+        </motion.div>
+
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors min-h-[44px] ${
+                activeCategory === cat
+                  ? "bg-[#1a4792] text-white"
+                  : "bg-[#f5f5f5] text-gray-600 hover:bg-[#9cc0dd]/30"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          {filteredItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.05 }}
+              className="aspect-square relative overflow-hidden rounded-xl cursor-pointer group"
+              onClick={() => setSelectedImage(item)}
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-medium">
+                  Ver más
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+              onClick={() => setSelectedImage(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.9 }}
+                className="relative max-w-4xl w-full aspect-video"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  fill
+                  className="object-contain"
+                />
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  aria-label="Cerrar"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </Container>
+    </section>
+  );
+}

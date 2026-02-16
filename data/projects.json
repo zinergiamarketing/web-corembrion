@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "titulo": "Fomento actividad piscícola Ayapel",
+    "categoria": "piscicultura",
+    "descripcion": "Proyecto de fomento y fortalecimiento de la actividad piscícola en el municipio de Ayapel, beneficiando a las comunidades locales.",
+    "valor": 159940000,
+    "fecha": "2014",
+    "contrato": "CPS-078-2014",
+    "municipio": "Ayapel",
+    "logros": ["Capacitación a productores", "Entrega de alevinos", "Fortalecimiento de la cadena productiva"]
+  },
+  {
+    "id": "2",
+    "titulo": "Fomento actividad piscícola Ayapel",
+    "categoria": "piscicultura",
+    "descripcion": "Continuidad del programa de fomento piscícola en Ayapel.",
+    "valor": 160000000,
+    "fecha": "2015",
+    "contrato": "CPS N°074-2015",
+    "municipio": "Ayapel",
+    "logros": ["Expansión de estanques", "Capacitación técnica"]
+  },
+  {
+    "id": "3",
+    "titulo": "Generación ingresos piscicultura Ayapel",
+    "categoria": "piscicultura",
+    "descripcion": "Proyecto enfocado en la generación de ingresos mediante la actividad piscícola.",
+    "valor": 90000000,
+    "fecha": "2016",
+    "contrato": "SAMC-MA-005-2016",
+    "municipio": "Ayapel",
+    "logros": ["Generación de empleo", "Mejora de ingresos familiares"]
+  },
+  {
+    "id": "4",
+    "titulo": "Cultivo plátano hartón Puerto Libertador",
+    "categoria": "agricultura",
+    "descripcion": "Proyecto de cultivo de plátano hartón en el municipio de Puerto Libertador.",
+    "valor": 90000000,
+    "fecha": "2017",
+    "contrato": "N° 110 DE 2017",
+    "municipio": "Puerto Libertador",
+    "logros": ["Establecimiento de cultivos", "Capacitación agrícola"]
+  },
+  {
+    "id": "5",
+    "titulo": "Fomento actividad piscícola Ayapel",
+    "categoria": "piscicultura",
+    "descripcion": "Fortalecimiento continuo del sector piscícola en Ayapel.",
+    "valor": 89700000,
+    "fecha": "2018",
+    "contrato": "SA MC-MA014-2018",
+    "municipio": "Ayapel",
+    "logros": ["Sostenibilidad productiva", "Comercialización"]
+  },
+  {
+    "id": "6",
+    "titulo": "Fomento actividad piscícola Ayapel",
+    "categoria": "piscicultura",
+    "descripcion": "Proyecto de fomento piscícola 2019.",
+    "valor": 89900000,
+    "fecha": "2019",
+    "contrato": "SA-MC-MA-007-2019",
+    "municipio": "Ayapel",
+    "logros": ["Técnicas mejoradas", "Asociatividad"]
+  },
+  {
+    "id": "7",
+    "titulo": "Suministro insumos agrícolas",
+    "categoria": "agricultura",
+    "descripcion": "Suministro de insumos agrícolas para el fortalecimiento productivo.",
+    "valor": 155000000,
+    "fecha": "2020",
+    "contrato": "N° 001 DE 15-05 DE 2020",
+    "municipio": "Región",
+    "logros": ["Insumos entregados", "Apoyo a productores"]
+  },
+  {
+    "id": "8",
+    "titulo": "Patios productivos Puerto Libertador",
+    "categoria": "agricultura",
+    "descripcion": "Mega proyecto de patios productivos para seguridad alimentaria.",
+    "valor": 14363161990,
+    "fecha": "2022",
+    "contrato": "CEJEP 001 DE 2022",
+    "municipio": "Puerto Libertador",
+    "logros": ["Patios establecidos", "Seguridad alimentaria", "Empoderamiento comunitario"]
+  },
+  {
+    "id": "9",
+    "titulo": "Cadena productiva plátano Valencia",
+    "categoria": "agricultura",
+    "descripcion": "Fortalecimiento de la cadena productiva del plátano en Valencia.",
+    "valor": 16036304559,
+    "fecha": "2022",
+    "contrato": "CEJEP SMC 002 DE 2022",
+    "municipio": "Valencia",
+    "logros": ["Cadena fortalecida", "Comercialización", "Valor agregado"]
+  },
+  {
+    "id": "10",
+    "titulo": "Agronegocios hortofrutícolas Sucre",
+    "categoria": "agricultura",
+    "descripcion": "Proyecto de agronegocios hortofrutícolas en el departamento de Sucre.",
+    "valor": 14017400687,
+    "fecha": "2023",
+    "contrato": "L.P-012-2023",
+    "municipio": "Sucre",
+    "logros": ["Agronegocios establecidos", "Mercados conectados"]
+  },
+  {
+    "id": "11",
+    "titulo": "Fortalecimiento sector acuícola regional",
+    "categoria": "piscicultura",
+    "descripcion": "Fortalecimiento integral del sector acuícola en la región.",
+    "valor": 3000000000,
+    "fecha": "2023",
+    "contrato": "CONVENIO N° 547",
+    "municipio": "Región",
+    "logros": ["Sector fortalecido", "Capacitación regional"]
+  },
+  {
+    "id": "12",
+    "titulo": "Repoblamiento cuencas ríos Magdalena y Sinú",
+    "categoria": "piscicultura",
+    "descripcion": "Proyecto de repoblamiento de especies en las cuencas de los ríos Magdalena y Sinú.",
+    "valor": 18204801784,
+    "fecha": "2024",
+    "contrato": "CONVENIO Nº 410 DE 2024",
+    "municipio": "Magdalena y Sinú",
+    "logros": ["Repoblamiento ejecutado", "Conservación", "Sostenibilidad"]
+  }
+]

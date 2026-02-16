@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Corembrion - Sitio Web Institucional
 
-## Getting Started
+Sitio web de **Corembrion** (Corporación para el Desarrollo Integral), fundación con sede en Ayapel, Córdoba, Colombia.
 
-First, run the development server:
+**Dominio:** [www.corembrion.com](https://www.corembrion.com)
+
+## Stack Tecnológico
+
+- **Next.js 16** con App Router
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** para animaciones
+- **React Hook Form + Zod** para formularios
+
+## Desarrollo
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Compilar para producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura del Proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+├── app/                    # Rutas y páginas
+│   ├── layout.tsx         # Layout principal
+│   ├── page.tsx           # Página de inicio
+│   ├── nosotros/
+│   ├── areas-trabajo/
+│   ├── proyectos/
+│   │   └── [id]/          # Detalle de proyecto
+│   └── contacto/
+├── components/
+│   ├── layout/            # Header, Footer, Navigation
+│   ├── sections/          # Secciones de la página
+│   ├── ui/                # Componentes reutilizables
+│   └── StructuredData.tsx  # Schema.org JSON-LD
+├── data/
+│   └── projects.json      # Datos de proyectos
+├── lib/
+│   └── utils.ts
+└── types/
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Agregar Nuevos Proyectos
 
-## Learn More
+Edita `data/projects.json` siguiendo la estructura documentada en `data/README.md`.
 
-To learn more about Next.js, take a look at the following resources:
+## Configuración
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copia `.env.example` a `.env.local` y configura las variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `NEXT_PUBLIC_SITE_URL` - URL del sitio
+- `NEXT_PUBLIC_EMAILJS_*` - Para formulario de contacto (EmailJS)
+- `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` - Opcional para mapas avanzados
 
-## Deploy on Vercel
+## Imágenes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Las imágenes actuales son placeholders de Unsplash
+- Para usar imágenes propias: colócalas en `public/images/` y actualiza las referencias
+- El logo de Corembrion: agregar en `public/logos/` y actualizar Header/Footer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment (Vercel)
+
+1. Conectar el repositorio a Vercel
+2. Configurar variables de entorno
+3. Deploy automático en cada push
+
+### DNS (Namecheap)
+
+Para apuntar el dominio a Vercel:
+- Tipo A: `@` → IP de Vercel
+- CNAME: `www` → `cname.vercel-dns.com`
+
+## Checklist de Producción
+
+- [ ] Agregar logo de Corembrion
+- [ ] Reemplazar imágenes placeholder con fotos reales
+- [ ] Configurar EmailJS o Resend para formulario de contacto
+- [ ] Agregar enlaces reales de redes sociales
+- [ ] Generar favicon e iconos PWA (192x192, 512x512)
+- [ ] Verificar Google Maps embed
+- [ ] Configurar Google Analytics 4 (opcional)
