@@ -81,10 +81,10 @@ export function Contact() {
               <div>
                 <h3 className="font-semibold text-[#1a4792] mb-2">Email</h3>
                 <a
-                  href="mailto:corembrion@hotmail.com"
+                  href="mailto:info@corembrion.com"
                   className="text-gray-600 hover:text-[#1a4792] transition-colors"
                 >
-                  corembrion@hotmail.com
+                  info@corembrion.com
                 </a>
               </div>
               <div>

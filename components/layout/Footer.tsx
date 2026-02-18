@@ -54,8 +54,8 @@ export function Footer() {
             <address className="text-gray-300 text-sm not-italic space-y-2">
               <p>Calle 11 No 6-87, Ayapel - Córdoba</p>
               <p>
-                <a href="mailto:corembrion@hotmail.com" className="hover:text-white transition-colors">
-                  corembrion@hotmail.com
+                <a href="mailto:info@corembrion.com" className="hover:text-white transition-colors">
+                  info@corembrion.com
                 </a>
               </p>
               <p>

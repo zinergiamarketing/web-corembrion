@@ -8,6 +8,7 @@ export interface Proyecto {
   contrato: string;
   municipio: string;
   imagen?: string;
+  imagenes?: string[];
   logros?: string[];
 }
 

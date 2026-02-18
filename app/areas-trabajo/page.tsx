@@ -18,11 +18,11 @@ export default function AreasTrabajoPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold font-heading">Áreas de Trabajo</h1>
             <p className="text-xl text-white/90 mt-4">
-              Nuestras líneas de acción para el desarrollo integral
+              Nuestras líneas de acción para el desarrollo integral de la región
             </p>
           </div>
         </section>
-        <WorkAreas />
+        <WorkAreas isPageView />
       </main>
       <Footer />
     </>

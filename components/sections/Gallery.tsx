@@ -7,9 +7,17 @@ import { Container } from "@/components/ui/Container";
 import { MobileCarousel, CarouselItem } from "@/components/ui/MobileCarousel";
 
 const galleryItems = [
-  { id: 1, src: "/images/proyectos/proyecto-1.jpeg", category: "Proyectos", alt: "Proyecto Corembrion" },
-  { id: 2, src: "/images/nosotros/nosotros-1.jpeg", category: "Comunidades", alt: "Comunidad de la región del San Jorge" },
-  { id: 3, src: "/images/hero/hero-1.jpeg", category: "Naturaleza", alt: "Región del San Jorge" },
+  { id: 1, src: "/images/galeria/galeria-1.jpg", category: "Proyectos", alt: "Proyecto Corembrion" },
+  { id: 2, src: "/images/galeria/galeria-2.jpg", category: "Proyectos", alt: "Proyecto Corembrion" },
+  { id: 3, src: "/images/galeria/galeria-3.jpg", category: "Proyectos", alt: "Proyecto Corembrion" },
+  { id: 4, src: "/images/galeria/galeria-4.jpg", category: "Comunidades", alt: "Comunidad de la región del San Jorge" },
+  { id: 5, src: "/images/galeria/galeria-5.jpg", category: "Comunidades", alt: "Comunidad de la región del San Jorge" },
+  { id: 6, src: "/images/galeria/galeria-6.jpg", category: "Comunidades", alt: "Comunidad de la región del San Jorge" },
+  { id: 7, src: "/images/galeria/galeria-7.jpg", category: "Capacitaciones", alt: "Capacitación en la región" },
+  { id: 8, src: "/images/galeria/galeria-8.jpg", category: "Capacitaciones", alt: "Capacitación en la región" },
+  { id: 9, src: "/images/galeria/galeria-9.jpg", category: "Naturaleza", alt: "Región del San Jorge" },
+  { id: 10, src: "/images/galeria/galeria-10.jpg", category: "Naturaleza", alt: "Región del San Jorge" },
+  { id: 11, src: "/images/galeria/galeria-11.jpg", category: "Naturaleza", alt: "Región del San Jorge" },
 ];
 
 const categories = ["Todos", "Proyectos", "Comunidades", "Capacitaciones", "Naturaleza"];

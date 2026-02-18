@@ -19,7 +19,7 @@ export default function NosotrosPage() {
           <Container>
             <h1 className="text-4xl font-bold font-heading">Nosotros</h1>
             <p className="text-xl text-white/90 mt-4">
-              Corporación para el Desarrollo Integral
+              COREMBRION - Corporación para el Desarrollo Integral
             </p>
           </Container>
         </section>

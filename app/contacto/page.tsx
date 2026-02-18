@@ -6,7 +6,7 @@ import { Contact } from "@/components/sections/Contact";
 export const metadata: Metadata = {
   title: "Contacto | Corembrion",
   description:
-    "Contacta a Corembrion - Calle 11 No 6-87, Ayapel, Córdoba. Email: corembrion@hotmail.com | Tel: +57 300 282 4880",
+    "Contacta a Corembrion - Calle 11 No 6-87, Ayapel, Córdoba. Email: info@corembrion.com | Tel: +57 300 282 4880",
 };
 
 export default function ContactoPage() {

@@ -50,7 +50,7 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
         <article>
           <div className="relative h-64 sm:h-96 bg-gray-200">
             <Image
-              src={proyecto.imagen || "/images/proyectos/proyecto-1.jpeg"}
+              src={proyecto.imagen || "/images/proyectos/proyectos-1-01.jpg"}
               alt={proyecto.titulo}
               fill
               className="object-cover"
@@ -89,6 +89,25 @@ export default async function ProyectoDetallePage({ params }: PageProps) {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {proyecto.imagenes && proyecto.imagenes.length > 0 && (
+                  <div>
+                    <h2 className="text-xl font-bold text-[#1a4792] mb-4">Galería del proyecto</h2>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                      {proyecto.imagenes.map((src, i) => (
+                        <div key={i} className="relative aspect-video rounded-lg overflow-hidden bg-gray-200">
+                          <Image
+                            src={src}
+                            alt={`${proyecto.titulo} - imagen ${i + 1}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 50vw, 33vw"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

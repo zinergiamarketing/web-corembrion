@@ -130,5 +130,26 @@
     "contrato": "CONVENIO Nº 410 DE 2024",
     "municipio": "Magdalena y Sinú",
     "logros": ["Repoblamiento ejecutado", "Conservación", "Sostenibilidad"]
+  },
+  {
+    "id": "13",
+    "titulo": "Agronegocios hortofrutícolas intensivos con pequeños productores en Sucre.",
+    "categoria": "agricultura",
+    "descripcion": "Proyecto para implementar sistemas hortofrutícolas intensivos con pequeños productores de Sucre, Guaranda y Majagual, mejorando sus ingresos y fortaleciendo los agronegocios rurales en el departamento de Sucre.",
+    "valor": 0,
+    "fecha": "2026",
+    "contrato": "-",
+    "municipio": "Sucre, Guaranda y Majagual",
+    "imagen": "/images/proyectos/proyectos-1-01.jpg",
+    "imagenes": [
+      "/images/proyectos/proyectos-1-01.jpg",
+      "/images/proyectos/proyectos-1-02.jpg",
+      "/images/proyectos/proyectos-1-03.jpg",
+      "/images/proyectos/proyectos-1-04.jpg",
+      "/images/proyectos/proyectos-1-05.jpg",
+      "/images/proyectos/proyectos-1-06.jpg",
+      "/images/proyectos/proyectos-1-07.jpg"
+    ],
+    "logros": ["Sistemas hortofrutícolas implementados", "Mejora de ingresos de pequeños productores", "Fortalecimiento de agronegocios rurales"]
   }
 ]

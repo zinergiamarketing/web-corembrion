@@ -17,7 +17,7 @@ export function OrganizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+57-300-282-4880",
-      email: "corembrion@hotmail.com",
+      email: "info@corembrion.com",
       contactType: "customer service",
       areaServed: "CO",
     },
@@ -41,7 +41,7 @@ export function LocalBusinessSchema() {
     image: "https://www.corembrion.com/logo.png",
     url: "https://www.corembrion.com",
     telephone: "+57-300-282-4880",
-    email: "corembrion@hotmail.com",
+    email: "info@corembrion.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Calle 11 No 6-87",

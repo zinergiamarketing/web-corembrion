@@ -156,7 +156,7 @@ const galleryItems = [
 
 1. En el dashboard: **Email Services** → **Add New Service**
 2. Elige **Gmail** (o el proveedor que uses)
-3. Conecta tu cuenta: `corembrion@hotmail.com`
+3. Conecta tu cuenta: `info@corembrion.com` (o el correo que uses)
 4. Guarda el **Service ID** (ej: `service_abc123`)
 
 ### 3.3 Crear plantilla de email
@@ -164,7 +164,7 @@ const galleryItems = [
 1. **Email Templates** → **Create New Template**
 2. Configura:
    - **Name:** Corembrion Contacto
-   - **To Email:** `corembrion@hotmail.com`
+   - **To Email:** `info@corembrion.com`
    - **Subject:** `{{asunto}}` (o "Contacto desde web Corembrion")
    - **Content:**
    ```
@@ -231,7 +231,7 @@ try {
 1. Reinicia el servidor: `npm run dev`
 2. Ve a la página de contacto
 3. Envía un mensaje de prueba
-4. Revisa la bandeja de `corembrion@hotmail.com`
+4. Revisa la bandeja de `info@corembrion.com`
 
 ---
 

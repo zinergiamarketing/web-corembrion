@@ -51,24 +51,41 @@ const areas = [
   },
 ];
 
-export function WorkAreas() {
+interface WorkAreasProps {
+  /** En la página dedicada, el banner ya muestra el título; no repetir encabezado */
+  isPageView?: boolean;
+}
+
+export function WorkAreas({ isPageView }: WorkAreasProps) {
   return (
     <section id="areas-trabajo" className="py-12 md:py-20 bg-white">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10 md:mb-16"
-        >
-          <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-3 md:mb-4 font-heading">
-            Áreas de Trabajo
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Nuestras líneas de acción para el desarrollo integral de la región
-          </p>
-        </motion.div>
+        {isPageView ? (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-10 md:mb-14"
+          >
+            Formación, desarrollo productivo, turismo sostenible y gestión de proyectos — cuatro ámbitos que impulsan el desarrollo integral en la región del San Jorge.
+          </motion.p>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10 md:mb-16"
+          >
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-3 md:mb-4 font-heading">
+              Áreas de Trabajo
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+              Nuestras líneas de acción para el desarrollo integral de la región
+            </p>
+          </motion.div>
+        )}
 
         {/* Carrusel móvil */}
         <div className="md:hidden">

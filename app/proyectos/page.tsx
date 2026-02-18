@@ -18,11 +18,11 @@ export default function ProyectosPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold font-heading">Nuestros Proyectos</h1>
             <p className="text-xl text-white/90 mt-4">
-              Más de 12 proyectos transformando comunidades
+              Más de 13 proyectos transformando comunidades
             </p>
           </div>
         </section>
-        <Projects />
+        <Projects hideViewAll />
       </main>
       <Footer />
     </>

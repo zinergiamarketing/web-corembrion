@@ -39,7 +39,7 @@ export function AboutUs() {
             Quiénes Somos
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            Corporación para el Desarrollo Integral con sede en Ayapel, Córdoba
+            COREMBRION - Corporación para el Desarrollo Integral con sede en Ayapel, Córdoba
           </p>
         </motion.div>
 
@@ -95,15 +95,19 @@ export function AboutUs() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-10 md:mt-16 rounded-xl overflow-hidden aspect-video bg-gray-200 relative"
+          className="mt-10 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          <Image
-            src="/images/nosotros/nosotros-1.jpeg"
-            alt="Comunidades de la región del San Jorge"
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 1200px"
-          />
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="rounded-xl overflow-hidden aspect-video bg-gray-200 relative">
+              <Image
+                src={`/images/nosotros/nosotros-${i}.jpg`}
+                alt={`Comunidades de la región del San Jorge - imagen ${i}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+          ))}
         </motion.div>
       </Container>
     </section>
