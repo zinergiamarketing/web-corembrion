@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -21,7 +22,10 @@ interface NavigationProps {
 export function Navigation({ variant = "dark" }: NavigationProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const isLight = variant === "light";
+
+  useEffect(() => setMounted(true), []);
 
   // Cerrar menú al cambiar de página (evita estado inconsistente)
   useEffect(() => {
@@ -54,54 +58,61 @@ export function Navigation({ variant = "dark" }: NavigationProps) {
         )}
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="lg:hidden fixed inset-0 z-[100] bg-black/50"
-              onClick={() => setIsOpen(false)}
-              aria-hidden="true"
-            />
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="lg:hidden fixed top-0 right-0 bottom-0 w-full max-w-[280px] z-[101] bg-[#1a4792] shadow-2xl flex flex-col pt-20 pb-8 px-5 overflow-y-auto relative"
-            >
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 p-2 rounded-lg text-white hover:bg-white/20 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label="Cerrar menú"
-              >
-                <X className="w-6 h-6" strokeWidth={2} />
-              </button>
-              <nav className="flex flex-col gap-2" aria-label="Navegación principal">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-white text-lg font-medium hover:text-[#9cc0dd] transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-                <Link
-                  href="/contacto"
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {isOpen && (
+              <>
+                <motion.div
+                  key="backdrop"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="lg:hidden fixed inset-0 z-[9998] bg-black/60"
                   onClick={() => setIsOpen(false)}
-                  className="mt-6 inline-flex justify-center bg-white text-[#1a4792] px-6 py-3 rounded-lg font-semibold hover:bg-[#9cc0dd] transition-colors"
+                  aria-hidden="true"
+                />
+                <motion.div
+                  key="panel"
+                  initial={{ x: "100%" }}
+                  animate={{ x: 0 }}
+                  exit={{ x: "100%" }}
+                  transition={{ type: "tween", duration: 0.3 }}
+                  className="lg:hidden fixed inset-y-0 right-0 w-full max-w-[300px] sm:max-w-[320px] z-[9999] bg-[#1a4792] shadow-2xl flex flex-col pt-20 pb-8 px-5 overflow-y-auto"
                 >
-                  Contáctanos
-                </Link>
-              </nav>
-            </motion.div>
-          </>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-4 right-4 p-2 rounded-lg text-white hover:bg-white/20 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    aria-label="Cerrar menú"
+                  >
+                    <X className="w-6 h-6" strokeWidth={2} />
+                  </button>
+                  <nav className="flex flex-col gap-2 mt-4" aria-label="Navegación principal">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-white text-lg font-medium hover:text-[#9cc0dd] transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                    <Link
+                      href="/contacto"
+                      onClick={() => setIsOpen(false)}
+                      className="mt-6 inline-flex justify-center bg-white text-[#1a4792] px-6 py-3 rounded-lg font-semibold hover:bg-[#9cc0dd] transition-colors"
+                    >
+                      Contáctanos
+                    </Link>
+                  </nav>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
 
       <nav className="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
         {navLinks.map((link) => (
