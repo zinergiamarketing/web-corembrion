@@ -18,6 +18,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/icons/icon-192.png",
+  },
   title: "Corembrion | Desarrollo Integral en Córdoba",
   description:
     "Corporación para el Desarrollo Integral. Transformando comunidades en la región del San Jorge con proyectos de acuicultura, agricultura, formación y turismo sostenible.",
