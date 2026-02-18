@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-const heroImages = ["/images/hero/hero-1.jpg", "/images/hero/hero-2.jpg"];
+const heroImages = ["/images/hero/hero-1.jpg", "/images/hero/hero-2.jpg", "/images/hero/hero-3.jpg"];
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);

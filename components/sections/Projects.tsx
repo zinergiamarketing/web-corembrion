@@ -44,9 +44,11 @@ const categoriaLabels: Record<string, string> = {
 interface ProjectsProps {
   /** Ocultar el botón "Ver todos" cuando ya estamos en la página de proyectos */
   hideViewAll?: boolean;
+  /** En la página dedicada, el banner ya muestra título y subtítulo; no repetir */
+  isPageView?: boolean;
 }
 
-export function Projects({ hideViewAll }: ProjectsProps) {
+export function Projects({ hideViewAll, isPageView }: ProjectsProps) {
   const [filtroCategoria, setFiltroCategoria] = useState("todos");
   const [filtroAño, setFiltroAño] = useState("todos");
   const [orden, setOrden] = useState<"recientes" | "antiguos">("recientes");
@@ -80,14 +82,18 @@ export function Projects({ hideViewAll }: ProjectsProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 md:mb-10"
+          className={isPageView ? "mb-8 md:mb-10" : "text-center mb-8 md:mb-10"}
         >
-          <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-3 md:mb-4 font-heading">
-            Nuestros Proyectos
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            Más de 13 proyectos ejecutados transformando comunidades en la región
-          </p>
+          {!isPageView && (
+            <>
+              <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-3 md:mb-4 font-heading">
+                Nuestros Proyectos
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                Más de 13 proyectos ejecutados transformando comunidades en la región
+              </p>
+            </>
+          )}
 
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}

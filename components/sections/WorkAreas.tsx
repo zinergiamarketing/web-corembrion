@@ -66,7 +66,7 @@ export function WorkAreas({ isPageView }: WorkAreasProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-10 md:mb-14"
+            className="text-left text-lg text-gray-600 max-w-3xl mb-10 md:mb-14"
           >
             Formación, desarrollo productivo, turismo sostenible y gestión de proyectos — cuatro ámbitos que impulsan el desarrollo integral en la región del San Jorge.
           </motion.p>
