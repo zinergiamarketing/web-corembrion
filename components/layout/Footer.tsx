@@ -6,23 +6,22 @@ const navLinks = [
   { href: "/nosotros", label: "Nosotros" },
   { href: "/areas-trabajo", label: "Áreas de Trabajo" },
   { href: "/proyectos", label: "Proyectos" },
-  { href: "/contacto", label: "Contacto" },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-white">
+    <footer className="bg-[#1a4792] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image
-                src="/logos/logo.png"
-                alt="Logo Corembrion"
-                width={40}
-                height={40}
-                className="object-contain"
-              />
+            <Image
+              src="/logos/logo-2.png"
+              alt="Logo Corembrion"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
               <span className="font-bold text-xl uppercase tracking-wide">COREMBRION</span>
             </Link>
             <p className="text-gray-300 text-sm">
@@ -61,7 +60,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+        <div className="mt-12 pt-8 border-t border-white/20 text-center text-white/80 text-sm">
           <p>© 2026 COREMBRION - Corporación para el Desarrollo Integral. NIT: 830504939-5</p>
         </div>
       </div>

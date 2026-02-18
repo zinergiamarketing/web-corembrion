@@ -32,7 +32,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2" aria-label="Corembrion - Inicio">
             <Image
-              src="/logos/logo.png"
+              src={useLightNav ? "/logos/logo-2.png" : "/logos/logo.png"}
               alt="Logo Corembrion"
               width={48}
               height={48}

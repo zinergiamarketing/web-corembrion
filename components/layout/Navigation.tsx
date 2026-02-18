@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/nosotros", label: "Nosotros" },
   { href: "/areas-trabajo", label: "Áreas de Trabajo" },
   { href: "/proyectos", label: "Proyectos" },
-  { href: "/contacto", label: "Contacto" },
 ];
 
 interface NavigationProps {
