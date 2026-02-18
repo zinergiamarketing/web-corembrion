@@ -22,7 +22,7 @@ export default function ContactoPage() {
             </p>
           </div>
         </section>
-        <Contact />
+        <Contact isPageView />
       </main>
       <Footer />
     </>

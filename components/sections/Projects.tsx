@@ -52,7 +52,7 @@ export function Projects({ hideViewAll, isPageView }: ProjectsProps) {
   const [filtroCategoria, setFiltroCategoria] = useState("todos");
   const [filtroAño, setFiltroAño] = useState("todos");
   const [orden, setOrden] = useState<"recientes" | "antiguos">("recientes");
-  const [vista, setVista] = useState<"grid" | "lista">("lista");
+  const [vista, setVista] = useState<"grid" | "lista">("grid");
 
   const proyectos = projectsData as Proyecto[];
 

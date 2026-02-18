@@ -6,6 +6,11 @@ import Image from "next/image";
 import { Target, Eye, Handshake } from "lucide-react";
 import { MobileCarousel, CarouselItem } from "@/components/ui/MobileCarousel";
 
+interface AboutUsProps {
+  /** En la página dedicada, el banner ya muestra el nombre; no repetir, alinear a la izquierda */
+  isPageView?: boolean;
+}
+
 const items = [
   {
     title: "Misión",
@@ -24,7 +29,7 @@ const items = [
   },
 ];
 
-export function AboutUs() {
+export function AboutUs({ isPageView }: AboutUsProps) {
   return (
     <section id="nosotros" className="py-12 md:py-20 bg-[#f5f5f5]">
       <Container>
@@ -33,13 +38,13 @@ export function AboutUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 md:mb-16"
+          className={isPageView ? "text-left mb-10 md:mb-16" : "text-center mb-10 md:mb-16"}
         >
           <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-3 md:mb-4 font-heading">
             Quiénes Somos
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-            COREMBRION - Corporación para el Desarrollo Integral con sede en Ayapel, Córdoba
+          <p className={`text-base md:text-lg text-gray-600 max-w-3xl ${isPageView ? "" : "mx-auto"}`}>
+            {isPageView ? "Con sede en Ayapel, Córdoba." : "COREMBRION - Corporación para el Desarrollo Integral con sede en Ayapel, Córdoba"}
           </p>
         </motion.div>
 

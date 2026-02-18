@@ -3,6 +3,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { AboutUs } from "@/components/sections/AboutUs";
+import { Stats } from "@/components/sections/Stats";
+import { Gallery } from "@/components/sections/Gallery";
 
 export const metadata: Metadata = {
   title: "Nosotros | Corembrion",
@@ -23,7 +25,9 @@ export default function NosotrosPage() {
             </p>
           </Container>
         </section>
-        <AboutUs />
+        <AboutUs isPageView />
+        <Stats />
+        <Gallery />
       </main>
       <Footer />
     </>

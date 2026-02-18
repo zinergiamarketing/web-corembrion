@@ -8,6 +8,11 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
+interface ContactProps {
+  /** En la página dedicada, el banner ya muestra título y subtítulo; no repetir */
+  isPageView?: boolean;
+}
+
 const contactSchema = z.object({
   nombre: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
   email: z.string().email("Email inválido"),
@@ -18,7 +23,7 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-export function Contact() {
+export function Contact({ isPageView }: ContactProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -64,12 +69,21 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-4 md:mb-6 font-heading">
-              Contacto
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Estamos aquí para responder tus preguntas. Escríbenos o visítanos en Ayapel.
-            </p>
+            {!isPageView && (
+              <>
+                <h2 className="text-2xl sm:text-4xl font-bold text-[#1a1a1a] mb-4 md:mb-6 font-heading">
+                  Contacto
+                </h2>
+                <p className="text-gray-600 mb-8">
+                  Estamos aquí para responder tus preguntas. Escríbenos o visítanos en Ayapel.
+                </p>
+              </>
+            )}
+            {isPageView && (
+              <p className="text-gray-600 mb-8 text-left">
+                Escríbenos o visítanos en Ayapel.
+              </p>
+            )}
 
             <div className="space-y-6">
               <div>
