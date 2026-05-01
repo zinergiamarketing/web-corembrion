@@ -5,7 +5,9 @@ import { OrganizationSchema, LocalBusinessSchema } from "@/components/Structured
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MaintenanceGate } from "@/components/MaintenanceGate";
 
-const maintenanceModeOn = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
+// Activo por defecto para proteger el sitio temporalmente.
+// Desactivar definiendo MAINTENANCE_MODE=false en el entorno.
+const maintenanceModeOn = process.env.MAINTENANCE_MODE !== "false";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,7 +63,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body className="antialiased">
-        {/* Candado temporal: desactivar con NEXT_PUBLIC_MAINTENANCE_MODE distinto de "true"; ver MaintenanceGate.tsx */}
+        {/* Candado temporal: desactivar con MAINTENANCE_MODE=false; ver MaintenanceGate.tsx */}
         <MaintenanceGate enabled={maintenanceModeOn}>
           {children}
           <WhatsAppButton />

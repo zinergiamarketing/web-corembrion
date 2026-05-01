@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
 
-/** Solo activo si NEXT_PUBLIC_MAINTENANCE_MODE está en true */
+/**
+ * Candado activo por defecto.
+ * Se desactiva solo cuando MAINTENANCE_MODE=false.
+ */
 
 export async function POST(request: Request) {
-  const modeOn = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
+  const modeOn = process.env.MAINTENANCE_MODE !== "false";
   if (!modeOn) {
     return NextResponse.json({ ok: false, error: "disabled" }, { status: 400 });
   }
