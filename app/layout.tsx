@@ -3,6 +3,9 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema, LocalBusinessSchema } from "@/components/StructuredData";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { MaintenanceGate } from "@/components/MaintenanceGate";
+
+const maintenanceModeOn = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,8 +61,11 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body className="antialiased">
-        {children}
-        <WhatsAppButton />
+        {/* Candado temporal: desactivar con NEXT_PUBLIC_MAINTENANCE_MODE distinto de "true"; ver MaintenanceGate.tsx */}
+        <MaintenanceGate enabled={maintenanceModeOn}>
+          {children}
+          <WhatsAppButton />
+        </MaintenanceGate>
       </body>
     </html>
   );
